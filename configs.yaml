@@ -1,0 +1,42 @@
+# 域名文件路径
+# 可以是绝对路径或相对路径（相对于脚本所在目录）
+domains_file: domains.txt
+
+# 输出目录
+# 使用 "default" 将使用脚本目录下的 "outputs" 文件夹
+# 也可以指定一个绝对路径
+output_directory: default
+
+# SSL 连接超时时间（秒）
+ssl_timeout: 5
+
+# Excel 输出文件名前缀
+excel_prefix: "SSL-"
+
+# 是否包含错误信息在输出中
+include_errors: true
+
+# 输出的 Excel 文件中要包含的字段
+# 可以根据需要添加或删除字段
+output_fields:
+  - Domain
+  - Issuer
+  - Subject.countryName
+  - Subject.stateOrProvinceName
+  - Subject.organizationName
+  - Subject.commonName
+  - Version
+  - Serial Number
+  - Not Before
+  - Not After
+  - Subject Alternative Names
+  - OCSP
+  - CA Issuers
+  - CRL Distribution Points
+  - Error
+
+# 进度条设置
+progress_bar:
+  desc: "Checking SSL certificates"
+  unit: "domain"
+  colour: "green"
